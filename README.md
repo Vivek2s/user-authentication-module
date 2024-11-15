@@ -1,3 +1,4 @@
+
 # Full Stack Application Setup
 
 This repository contains the backend and frontend for a full-stack application. Follow the steps below to set up and run the application.
@@ -8,72 +9,81 @@ This repository contains the backend and frontend for a full-stack application. 
 
 ### Prerequisites
 
-- Ensure MongoDB is installed and running. Start MongoDB with the following command if running both frontend & backend separately:
+- Ensure MongoDB is installed and running. Start MongoDB with the following command only if running both frontend & backend separately:
 
   ```bash
   mongod --dbpath ~/data/db
+  ```
 
+### Steps
 
-Steps
-Navigate to the backend directory:
+1. Navigate to the `backend` directory:
+   ```bash
+   cd backend
+   ```
 
-bash
-Copy code
-cd backend
-Install the NestJS CLI globally:
+2. Install the NestJS CLI globally:
+   ```bash
+   npm install -g @nestjs/cli
+   ```
 
-bash
-Copy code
-npm install -g @nestjs/cli
-Install dependencies:
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-bash
-Copy code
-npm install
-Create a .env file:
+4. Create a `.env` file:
+   ```bash
+   touch .env
+   ```
 
-bash
-Copy code
-touch .env
-Add the following environment variables to the .env file:
+   Add the following environment variables to the `.env` file:
 
-env
-Copy code
-DATABASE_URI=mongodb://localhost:27017/auth-app
-JWT_SECRET=secret@123
-ALLOWED_ORIGIN=http://localhost:8080
-PORT=3000
-Start the backend server:
+   ```env
+   DATABASE_URI=mongodb://localhost:27017/auth-app
+   JWT_SECRET=secret@123
+   ALLOWED_ORIGIN=http://localhost:8080
+   PORT=3000
+   ```
 
-bash
-Copy code
-npm start
-Frontend Setup
-Steps
-Navigate to the frontend directory:
+5. Start the backend server:
+   ```bash
+   npm start
+   ```
 
-bash
-Copy code
-cd frontend
-Install the Vue CLI globally:
+---
 
-bash
-Copy code
-npm install -g @vue/cli
-Install dependencies:
+## Frontend Setup
 
-bash
-Copy code
-npm install
-Start the frontend development server:
+### Steps
 
-bash
-Copy code
-npm run serve
-Running Backend and Frontend Together
-Steps
-At the root directory of the project, run the following command to build and start both services using Docker Compose:
+1. Navigate to the `frontend` directory:
+   ```bash
+   cd frontend
+   ```
 
-bash
-Copy code
-sudo docker-compose up --build
+2. Install the Vue CLI globally:
+   ```bash
+   npm install -g @vue/cli
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+4. Start the frontend server:
+   ```bash
+   npm run serve
+   ```
+
+---
+
+## Run Both Backend and Frontend Simultaneously
+
+1. Navigate to the base directory of the project.
+
+2. Run the following command:
+   ```bash
+   sudo docker-compose up --build
+   ```
